@@ -29,11 +29,14 @@ public class LoginController extends HttpServlet {
 		
 		String login = request.getParameter("email");
         String senha = request.getParameter("senha");
+        			   request.getSession().setAttribute("email", login);
         
         System.out.println(login);
         System.out.println(senha);
+        
 
         if(login.equals("victormntr268@gmail.com") && senha.equals("1234")) {
+        	
         	response.sendRedirect("http://localhost:8080/agenda-acme/admin/dashboard/index.jsp");
         }
         else {
